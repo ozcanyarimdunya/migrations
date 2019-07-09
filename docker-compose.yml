@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    environment:
+      - 'POSTGRES_PASSWORD=123'
+    volumes:
+      - ./import.sql:/docker-entrypoint-initdb.d/import.sql
+    ports:
+      - 5432:5432
